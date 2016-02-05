@@ -1,0 +1,22 @@
+<div class="wrapper create-issue">
+<h1>Breakdown {{parent_title || 'an issue'}}</h1>
+  <form role="form">
+    <div class="form-group">
+      <label for="Title1">Title</label>
+      <input type="text" class="form-control" id="Title1" ng-model="card.name" placeholder="Enter your title here...">
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label> 
+      <textarea class="form-control" ng-model="card.description" id="exampleInputPassword1" cols="25" rows="25" style="height: 300px;">Enter a description...</textarea>
+    </div>
+      <div class="form-group">
+          <label for="Title1">Cover image URL</label>
+          <input type="text" class="form-control" id="image_url" ng-model="card.image_url" placeholder="http:// ... .jpg">
+      </div>
+      <div class="form-group" ng-show="upload">
+      <label for="exampleInputFile">Upload a cover picture</label>
+      <input type="file" id="exampleInputFile">
+    </div>
+    <button type="submit" ng-click="addCard()" class="btn btn-warning pull-right">Submit</button>
+  </form>
+</div>

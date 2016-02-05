@@ -1,0 +1,38 @@
+<div class="container">
+
+    <div class="topic-grid" style="display:inline-block" ng-repeat="card in cards">
+
+        <img ng-click="viewDetail(card.key)" class="topic-grid-image"
+            src="http://d.ibtimes.co.uk/en/full/1395234/ebola-liberia.jpg"
+            ng-src="{{ card.image_url }}"/>
+
+        <div class="topic-grid-content">
+
+            <h1 class="topic-grid-title">
+                <a ng-click="viewDetail(card.key)">{{card.title}}</a>
+            </h1>
+
+            <div class="topic-grid-author row">
+                <div class="col-sm-6">
+                    {{card.author}}
+                </div>
+                <div class="col-sm-6">
+                    <ul class="nav nav-pills pull-right">
+                        <li><span class="fa fa-star"></span>{{card.stars}}</li>
+                        <li><span class="fa fa-sort-amount-desc"></span>{{card.upvotes}}</li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr />
+
+            <div class="topic-grid-meta">
+                <span class="label label-default"
+                      ng-repeat="tag in card.tags">{{tag}}</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
